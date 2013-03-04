@@ -4,6 +4,8 @@
 <title>My First PHP Page</title>
 </head>
 <body>
+
+
 <?php
 //phpinfo();
 echo "<p>";
@@ -38,7 +40,53 @@ $file = fopen('test.txt','w+');
 fwrite($file,'Hello');
 fclose($file);
 unlink("test.txt");
+?>
+
+
+<?php
+$array=array();                         //tomb feltoltese 
+for($i=0; $i <5; $i++) {
+		$array[$i] = $i;
+		echo " " . $array[$i];
+}
+echo "<br>";
+
+print_r(array_count_values($array));	//megszamolja az azonos elemek szamat
+rsort($array);                         //tomb rendezes
+$length=count($array);
+for ($j=0; $j != $length; $j++){
+		echo " " . $array[$j];
+	}
+	echo "<br>";
+	$result = array_diff($cars,$array); 	//2 tomb osszehasonlitasa
+	print_r($result);
+	
+	echo "<br>";
+	
+	$tomb=array();                         //ket dimenzios tomb feltoltese 
+for($l=0; $l <5; $l++) {
+	echo "<br>";
+	for($k=0; $k <5; $k++) {
+		$tomb[$l][$k] = $l+$k;
+		echo " " . $tomb[$l][$k];
+		
+}}
+echo "<br>";
+$jd=cal_to_jd(CAL_GREGORIAN,date("m"),date("d"),date("Y"));  //nap kiiratasa
+echo(jddayofweek($jd,1));
+
+if (error_get_last() == 0){
+	
+	echo "Nincs hiba a php script generálása során!!!";	
+	}
+	else {
+		echo "<br> Hiba:   ";
+print_r(error_get_last());
+}
+
 ?> 
+
+ 
 
 </p>
 </body>
