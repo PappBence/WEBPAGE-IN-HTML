@@ -1,0 +1,5 @@
+<?php
+include("content1.php");
+
+?>
+<p>Tartalom</p>
